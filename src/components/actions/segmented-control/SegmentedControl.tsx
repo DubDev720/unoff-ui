@@ -10,6 +10,10 @@ import Icon from '@components/assets/icon/Icon'
 
 export interface SegmentedControlProps {
   /**
+   * Unique identifier for the segmented control
+   */
+  id?: string
+  /**
    * Array of tab configurations
    */
   items: Array<{
@@ -122,13 +126,20 @@ export default class SegmentedControl extends React.Component<
 
   // Render
   render() {
-    const { items, active, action } = this.props
+    const { id, items, active, action } = this.props
     const { activeTooltipId } = this.state
 
     return (
-      <div className={layouts['snackbar--medium']}>
+      <div
+        className={doClassnames([
+          'segmented-control',
+          layouts['snackbar--medium'],
+        ])}
+        data-id={id}
+        role="group"
+      >
         <div
-          className={doClassnames(['segmented-control'])}
+          className={doClassnames(['segmented-control__tabs'])}
           role="tablist"
         >
           {items.map((item) => (

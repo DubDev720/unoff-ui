@@ -14,6 +14,10 @@ type UpdateEvent = 'TYPED' | 'UPDATING' | 'RELEASED' | 'SHIFTED'
 
 interface SliderProps {
   /**
+   * Unique identifier for the slider
+   */
+  id?: string
+  /**
    * Type of slider interaction
    */
   type: 'EDIT' | 'FULLY_EDIT'
@@ -659,7 +663,7 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
 
   // Render
   render() {
-    const { type, hasPadding } = this.props
+    const { id, type, hasPadding } = this.props
 
     return (
       <div
@@ -667,6 +671,8 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
           'multiple-slider',
           !hasPadding && 'multiple-slider--no-padding',
         ])}
+        data-id={id}
+        role="group"
       >
         {type === 'EDIT' && <this.Edit />}
         {type === 'FULLY_EDIT' && <this.FullyEdit />}

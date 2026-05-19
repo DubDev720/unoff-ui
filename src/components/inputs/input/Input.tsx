@@ -10,7 +10,7 @@ import './input.scss'
 
 export interface InputProps {
   /**
-   * HTML id attribute
+   * Unique identifier for the input
    */
   id?: string
   /**
@@ -674,6 +674,7 @@ export default class Input extends React.Component<InputProps, InputState> {
           'input--with-color',
           isBlocked && 'input--blocked',
         ])}
+        data-id={id}
         role="group"
       >
         <div
@@ -774,6 +775,7 @@ export default class Input extends React.Component<InputProps, InputState> {
           isFlex && 'input--flex',
           isBlocked && 'input--blocked',
         ])}
+        data-id={id}
         role="group"
       >
         <div
@@ -896,6 +898,7 @@ export default class Input extends React.Component<InputProps, InputState> {
           isFlex && 'input__field--flex',
           isBlocked && 'input--blocked',
         ])}
+        data-id={id}
         role="group"
       >
         <div
@@ -995,6 +998,7 @@ export default class Input extends React.Component<InputProps, InputState> {
           'input--long-text',
           isBlocked && 'input--blocked',
         ])}
+        data-id={id}
         role="group"
       >
         <div
@@ -1066,6 +1070,7 @@ export default class Input extends React.Component<InputProps, InputState> {
           'input--code',
           isBlocked && 'input--blocked',
         ])}
+        data-id={id}
         role="group"
       >
         <div

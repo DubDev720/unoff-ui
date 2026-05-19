@@ -296,6 +296,7 @@ export default class SimpleSlider extends React.Component<
           !hasPadding && 'simple-slider--no-padding',
         ])}
         role="group"
+        data-id={id}
         aria-label={label}
       >
         <div
