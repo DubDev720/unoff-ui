@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **`Button` CSS class names**: internal classes renamed from `button` / `button__*` / `button--*` to `text-button` / `text-button__*` / `text-button--*` to better distinguish text buttons from icon buttons
 - **`Button` and `SegmentedControl` wrappers**: `role="group"` added to the outer `<div>` for improved semantic structure
+- **`Bar` component**: `flex` shorthand replaced with explicit `min-height` on both the default and `--compact` variants — fixes layout collapsing when content grows beyond the token value
+- **`Layout` story**: removed hardcoded `padding: 16px` from the `SimpleItem` slot sample
+- **`SimpleItem` story**: `ColorItem` variant now defaults to `alignment: 'CENTER'`
 
 ### Fixed
 
