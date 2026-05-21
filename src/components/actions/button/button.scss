@@ -10,7 +10,7 @@
   height: var(--button-status-height);
 }
 
-.button,
+.text-button,
 .icon-button {
   display: flex;
   position: relative;
@@ -24,7 +24,7 @@
     pointer-events: none;
   }
 
-  .button__icon {
+  .text-button__icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,13 +33,13 @@
     --icon-picto-color: var(--button-base-icon-color);
   }
 
-  .button__label {
+  .text-button__label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .button__caret {
+  .text-button__caret {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,8 @@
     --icon-picto-color: var(--button-base-icon-color);
   }
 
-  .button__loader {
+  .text-button__loader,
+  .icon-button__loader {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,18 +58,19 @@
     --icon-picto-color: var(--button-base-icon-color);
   }
 
-  &.button--loading {
+  &.text-button--loading,
+  &.icon-button--loading {
     pointer-events: none;
   }
 
-  &.button--loading > .button__label,
-  &.button--loading > .button__caret,
-  &.button--loading > .button__icon {
+  &.text-button--loading > .text-button__label,
+  &.text-button--loading > .text-button__caret,
+  &.text-button--loading > .text-button__icon {
     opacity: 0;
   }
 }
 
-.button {
+.text-button {
   gap: var(--button-base-gap);
   outline: var(--button-base-border-width) solid var(--button-base-border-color);
   outline-offset: var(--button-base-border-offset);

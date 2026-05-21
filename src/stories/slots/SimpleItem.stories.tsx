@@ -43,6 +43,7 @@ export const ColorItem: Story = {
       />
     ))(),
     isListItem: false,
+    alignment: 'CENTER',
   },
   argTypes: {
     id: { control: false },

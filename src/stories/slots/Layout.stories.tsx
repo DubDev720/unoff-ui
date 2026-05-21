@@ -44,14 +44,7 @@ const SamplePanel = ({
       {
         node: (
           <SimpleItem
-            leftPartSlot={
-              <div
-                className={texts.type}
-                style={{ padding: '16px' }}
-              >
-                {content}
-              </div>
-            }
+            leftPartSlot={<div className={texts.type}>{content}</div>}
             isListItem={false}
           />
         ),

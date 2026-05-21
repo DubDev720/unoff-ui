@@ -197,7 +197,11 @@ export default class Select extends React.Component<SelectProps, SelectState> {
       isReflowActive ? label !== undefined : helper !== undefined
 
     return (
-      <div className={layouts['snackbar--medium']}>
+      <div
+        className={doClassnames(['select', layouts['snackbar--medium']])}
+        data-id={id}
+        role="group"
+      >
         <div
           className={doClassnames(['checkbox'])}
           ref={this.containerRef}
@@ -282,7 +286,11 @@ export default class Select extends React.Component<SelectProps, SelectState> {
       isReflowActive ? label !== undefined : helper !== undefined
 
     return (
-      <div className={layouts['snackbar--medium']}>
+      <div
+        className={doClassnames(['select', layouts['snackbar--medium']])}
+        data-id={id}
+        role="group"
+      >
         <div
           className="radio"
           ref={this.containerRef}
@@ -368,7 +376,11 @@ export default class Select extends React.Component<SelectProps, SelectState> {
       isReflowActive ? label !== undefined : helper !== undefined
 
     return (
-      <div className={layouts['snackbar--medium']}>
+      <div
+        className={doClassnames(['select', layouts['snackbar--medium']])}
+        data-id={id}
+        role="group"
+      >
         <div
           className="switch"
           ref={this.containerRef}

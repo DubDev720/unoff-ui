@@ -10,6 +10,10 @@ import './button.scss'
 
 export interface ButtonProps {
   /**
+   * Unique identifier for the button
+   */
+  id?: string
+  /**
    * Visual style of the button
    */
   type:
@@ -221,6 +225,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
 
   Button = () => {
     const {
+      id,
       type,
       icon,
       size,
@@ -250,21 +255,23 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
 
     return (
       <div
-        className={layouts['snackbar--medium']}
+        className={doClassnames(['button', layouts['snackbar--medium']])}
         onMouseEnter={() => {
           if (hasTooltipContent()) this.setState({ isTooltipVisible: true })
         }}
         onMouseLeave={() => {
           if (hasTooltipContent()) this.setState({ isTooltipVisible: false })
         }}
+        data-id={id}
+        role="group"
       >
         <button
           role="button"
           className={doClassnames([
-            'button',
-            `button--${type}`,
-            `button--${size}`,
-            isLoading && 'button--loading',
+            'text-button',
+            `text-button--${type}`,
+            `text-button--${size}`,
+            isLoading && 'text-button--loading',
           ])}
           data-feature={feature}
           disabled={isDisabled}
@@ -292,7 +299,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
         >
           {getIconName() !== undefined && (
             <span
-              className="button__icon"
+              className="text-button__icon"
               aria-hidden="true"
             >
               <Icon
@@ -302,11 +309,11 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
             </span>
           )}
           {getButtonLabel() !== undefined && (
-            <span className="button__label">{getButtonLabel()}</span>
+            <span className="text-button__label">{getButtonLabel()}</span>
           )}
           {isLoading && (
             <div
-              className="button__loader"
+              className="text-button__loader"
               aria-hidden="true"
             >
               <Icon
@@ -318,7 +325,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
           )}
           {hasMultipleActions && (
             <span
-              className="button__caret"
+              className="text-button__caret"
               aria-hidden="true"
             >
               <Icon
@@ -349,9 +356,9 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
       <button
         role="link"
         className={doClassnames([
-          'button',
-          `button--${type}`,
-          `button--${size}`,
+          'text-button',
+          `text-button--${type}`,
+          `text-button--${size}`,
         ])}
         data-feature={feature}
         ref={this.buttonRef}
@@ -362,7 +369,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="button__label"
+          className="text-button__label"
           aria-label={label}
         >
           {label}
@@ -373,6 +380,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
 
   Icon = () => {
     const {
+      id,
       size,
       icon,
       iconClassName,
@@ -391,13 +399,15 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
 
     return (
       <div
-        className={layouts['snackbar--medium']}
+        className={doClassnames(['button', layouts['snackbar--medium']])}
         onMouseEnter={() => {
           if (helper !== undefined) this.setState({ isTooltipVisible: true })
         }}
         onMouseLeave={() => {
           if (helper !== undefined) this.setState({ isTooltipVisible: false })
         }}
+        data-id={id}
+        role="group"
       >
         <button
           role="button"
@@ -407,7 +417,7 @@ export default class Button extends React.Component<ButtonProps, ButtonState> {
             `icon-button--${size}`,
             state === 'selected' && 'icon-button--selected',
             isNew && 'icon-button--new',
-            isLoading && 'button--loading',
+            isLoading && 'icon-button--loading',
           ])}
           disabled={isDisabled}
           aria-label={typeof helper?.label === 'string' ? helper.label : icon}
