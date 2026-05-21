@@ -6,7 +6,7 @@
 .bar {
   display: flex;
   position: relative;
-  flex: 0 0 var(--bar-min-height);
+  min-height: var(--bar-min-height);
   justify-content: space-between;
   align-items: center;
   gap: var(--bar-gap);
@@ -21,7 +21,7 @@
   }
 
   &.bar--compact {
-    height: var(--bar-height-compact);
+    min-height: var(--bar-height-compact);
   }
 
   &.bar--text-only {
