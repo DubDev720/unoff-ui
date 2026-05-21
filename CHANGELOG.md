@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.24.2] - 2026-05-19
+
+### Added
+
+- **`id` prop** on `Button`, `SegmentedControl`, `Input` (all variants), `MultipleSlider`, `Select`, and `SimpleSlider` — exposed as a `data-id` attribute on the component's root wrapper element for external targeting and accessibility tooling
+
+### Changed
+
+- **`Button` CSS class names**: internal classes renamed from `button` / `button__*` / `button--*` to `text-button` / `text-button__*` / `text-button--*` to better distinguish text buttons from icon buttons
+- **`Button` and `SegmentedControl` wrappers**: `role="group"` added to the outer `<div>` for improved semantic structure
+
+### Fixed
+
+- **`peerDependencies`**: `react` and `react-dom` widened from `^18.2.0` to `>=16` and marked as optional — resolves peer conflict when the library is consumed alongside Preact in scaffolded plugin templates
+
 ## [1.24.1] - 2026-05-11
 
 ### Added
