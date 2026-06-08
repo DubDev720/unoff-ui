@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **Bind the right CSS custom properties on link button**: add the prefix `styles` to bind the variable invocation with the right properties - a new text styled as link has been added on the story
+- **Bind the right CSS custom properties on inline text link**: add the prefix `styles` to bind the variable invocation with the right properties - a new text styled as link has been added on the story
 
 ## [1.24.2] - 2026-05-21
 
