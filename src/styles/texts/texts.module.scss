@@ -74,13 +74,13 @@
   }
 
   a {
-    color: var(--text-link-color);
-    text-decoration: var(--text-link-decoration);
+    color: var(--text-styles-link-color);
+    text-decoration: var(--text-styles-link-decoration);
   }
 
   a:focus-visible {
-    outline: var(--text-link-border-focus);
-    text-decoration: var(--text-link-decoration-focus);
+    outline: var(--text-styles-link-border-focus);
+    text-decoration: var(--text-styles-link-decoration-focus);
   }
 }
 

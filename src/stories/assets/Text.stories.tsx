@@ -80,6 +80,7 @@ export const AllColors: Story = {
       <Text color="success">Success text (success)</Text>
       <Text color="warning">Warning text (warning)</Text>
       <Text color="alert">Alert text (alert)</Text>
+      <Text color="link">Link text (link)</Text>
       <div style={{ background: '#333', padding: '8px' }}>
         <Text color="inverse">Inverse text (inverse)</Text>
       </div>
