@@ -26,6 +26,7 @@ export type TextProps = {
     | 'success'
     | 'warning'
     | 'alert'
+    | 'link'
   /**
    * Truncate text if too long (adds ...)
    */
@@ -60,6 +61,16 @@ const Text = (props: TextProps) => {
     truncate && texts['type--truncated'],
     className,
   ]
+
+  if (color === 'link')
+    return (
+      <div
+        className={doClassnames(classNames)}
+        id={id}
+      >
+        <a>{children}</a>
+      </div>
+    )
 
   return (
     <div
